@@ -12,28 +12,30 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     int i=0;
-    EditText edPeso, edAltura;
+    EditText edpeso,edaltura;
+    TextView tvresultado;
+    Button buttonCalcular;
 
-    TextView textIMC;
-    Button  btnCalc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        edPeso=findViewById(R.id.edPeso);
-        edAltura=findViewById(R.id.edAltura);
-        textIMC=findViewById(R.id.textIMC);
-        btnCalc=findViewById(R.id.btnCalc);
+        edpeso=findViewById(R.id.edpeso);
+        edaltura=findViewById(R.id.edaltura);
+        tvresultado=findViewById(R.id.tvresultadoimc);
+        buttonCalcular=findViewById(R.id.button);
+        //define um tratamento do botão
+        buttonCalcular.setOnClickListener(v->{
+            //calcular imc
+            //recuperar os dados de peso e altura
+            double peso,altura,imc;
+            peso = Double.parseDouble(edpeso.getText().toString());
+            altura = Double.parseDouble(edaltura.getText().toString());
+            imc = peso/altura;
 
-
-        btnCalc.setOnClickListener(v->{
-            float peso=Float.parseFloat(edPeso.getText().toString());
-            float altura=Float.parseFloat(edAltura.getText().toString());
-            float IMC = peso/(altura*altura);
-
-            textIMC.setText(Float.toString(IMC));
+            tvresultado.setText(Double.toString(imc));
         });
+
     }
 }
