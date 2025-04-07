@@ -8,10 +8,10 @@
     tools:context=".MainActivityB">
 
     <TextView
-        android:id="@+id/txtAtt2"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Atividade 2"
+        android:text="Atividade B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
