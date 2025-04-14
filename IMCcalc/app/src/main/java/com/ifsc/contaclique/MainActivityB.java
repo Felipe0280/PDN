@@ -6,10 +6,12 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.ifsc.contaclicks.R;
+
 public class MainActivityB extends AppCompatActivity {
     ImageView imageview;
     Integer[] imagens= new Integer[]{
-            R.drawable.spinosaurusRugindo
+            R.drawable.spinosaurus
     };
     int posicao = 0;
     @Override
@@ -22,7 +24,7 @@ public class MainActivityB extends AppCompatActivity {
             TextView txtView = findViewById(R.id.txtAtt2);
             txtView.setText(msg);
 
-           // imageview.setImageResource(imagens(posicao));
+           //imageview.setImageResource(imagens(posicao));
 
         };
     }

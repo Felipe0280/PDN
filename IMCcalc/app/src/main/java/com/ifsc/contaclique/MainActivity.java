@@ -11,6 +11,8 @@ import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.ifsc.contaclicks.R;
+
 import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
