@@ -34,8 +34,11 @@ public class MainActivity extends AppCompatActivity {
         //define um tratamento do botão
         buttonCalcular.setOnClickListener(v->{
            Intent intent = new Intent(getApplicationContext(), MainActivityB.class);
-           String msg = edpeso.getText().toString();
-           intent.putExtra("mensagem",msg);
+            double valorPeso = Double.parseDouble(edpeso.getText().toString());
+            double valorAltura = Double.parseDouble(edaltura.getText().toString());
+            String resultado = String.valueOf(Double.valueOf(valorPeso/(valorAltura*valorAltura)));
+
+           intent.putExtra("mensagem",resultado);
            startActivity(intent);
         });
 
