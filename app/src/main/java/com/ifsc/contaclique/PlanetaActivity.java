@@ -1,6 +1,7 @@
 package com.ifsc.contaclique;
 
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -16,15 +17,15 @@ public class PlanetaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_planeta);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
 
-        Bundle b=getIntent().getExtras();
-        b.get("nome");
-        TextView tv = findViewById(R.id.tvPlaneta);
-        tv.setText(b.get("nome").toString());
+        Bundle bundle=getIntent().getExtras();
+
+        Planeta p = (Planeta) bundle.getSerializable ("planeta");
+
+        ImageView imageview =  findViewById(R.id.imagem);
+        TextView text = findViewById(R.id.tvPlaneta);
+
+        imageview.setImageResource(p.imagem);
+        text.setText(p.nome);
     }
 }

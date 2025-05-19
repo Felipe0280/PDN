@@ -45,7 +45,12 @@ public class MainActivity extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Planeta p = planetaDao.getPlaneta().get(position);
 
+                Intent i = new Intent(getApplicationContext(), PlanetaActivity.class);
+
+                i.putExtra("planeta", p);
+                startActivity(i);
             }
         });
 
