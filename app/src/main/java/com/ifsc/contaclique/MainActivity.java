@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         db =openOrCreateDatabase("banco",MODE_PRIVATE, null);
 
-        db.execSQL("CREATE TABLE IF NOT EXISTS notas(id int PRIMARY KEY AUTOINCREMENT, txt TEXT)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS notas(id INTEGER PRIMARY KEY AUTOINCREMENT, txt TEXT)");
         editText = findViewById(R.id.editTextText);
         botaoInserir = findViewById(R.id.button);
         listView = findViewById(R.id.lista);
